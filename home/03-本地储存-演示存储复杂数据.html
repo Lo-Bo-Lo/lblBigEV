@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="lll">删除数据</button>
+
+    <script>
+        let inp = document.querySelector('input');
+        let setBtn = document.querySelector('.set');
+        let getBtn = document.querySelector('.get');
+        let lll = document.querySelector('.lll');
+
+        let arr = [
+            { id: 1, name: "lw", age: 30 },
+            { id: 1, name: "xm", age: 26 },
+            { id: 1, name: "xhei", age: 32 },
+            { id: 1, name: "ww", age: 19 },
+        ];
+
+        setBtn.onclick = function () {
+            // 先把arr数组进行序列化 (JSON.stringify())  
+            let str = JSON.stringify(arr);
+            localStorage.setItem("info", str)
+        }
+
+        getBtn.onclick = function () {
+            let res = localStorage.getItem("info");
+            console.log(res);
+        }
+        lll.onclick = function () {
+            localStorage.clear();
+        }
+    </script>
+</body>
+
+</html>
