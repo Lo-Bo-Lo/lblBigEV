@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script>
         let token = localStorage.getItem("token");
-        console.log(token);
+        // console.log(token);
         if (!token) {
             location.href = "login.html";
         }
@@ -32,9 +32,9 @@
                         个人中心
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">更换头像</a></dd>
-                        <dd><a href="">重置密码</a></dd>
+                        <dd><a href="/user/user_info .html" target="layBody">基本资料</a></dd>
+                        <dd><a href="/user/user_avatar.html" target="layBody">更换头像</a></dd>
+                        <dd><a href="/user/user_pwd.html" target="layBody">重置密码</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="javascript:;" id="logoutBtn"><span class="iconfont icon-tuichu"></span>退出</a></li>
@@ -43,13 +43,13 @@
 
         <div class="layui-side layui-bg-black">
 
-            <div class="userInfo">
-                <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                <span class="text-avatar">A</span>
-                <span id="welcome">欢迎 XMAN</span>
-            </div>
-
             <div class="layui-side-scroll">
+
+                <div class="userInfo">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    <span class="text-avatar">A</span>
+                    <span id="welcome">欢迎 XMAN</span>
+                </div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
 
@@ -65,9 +65,9 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
-                            <dd><a href=""><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+                            <dd><a href="/user/user_info .html" target="layBody"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
+                            <dd><a href="/user/user_avatar.html" target="layBody"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
+                            <dd><a href="/user/user_pwd.html" target="layBody"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
                         </dl>
                     </li>
                 </ul>
@@ -77,6 +77,7 @@
         <div class="layui-body">
             <!-- 内容主体区域 -->
             <iframe src="/home/dashboard.html" name="layBody" frameborder="0"></iframe>
+            <!-- <iframe src="/user/user_pwd.html" name="layBody" frameborder="0"></iframe> -->
         </div>
 
         <div class="layui-footer">
